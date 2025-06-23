@@ -81,9 +81,48 @@ function findAllUserRepository() {
     });
 }
 
+async function updateUserRepository(id, user) {
+    return new Promise((resolve, reject) => {
+        const {username, email, password, avatar} = user;
+        db.run(
+        `
+            UPDATE users SET username = ?, email = ?, password = ?, avatar = ?
+            WHERE id = ?
+        `, 
+        [username, email, password, avatar, id], 
+        (err) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({id, ...user});
+            }
+        });
+    });
+}
+
+async function deleteUserRepository(id) {
+    return new Promise((resolve, reject) => {
+        db.run(
+            `
+            DELETE FROM users WHERE id = ?
+            `,
+            [id],
+            (err) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve({message: "User deleted successfully", id});
+                }
+            }
+        );
+    });
+}
+
 export default {
     createUserRepository,
     findUserByEmailRepository,
     findUserByIdRepository,
-    findAllUserRepository
+    findAllUserRepository,
+    updateUserRepository,
+    deleteUserRepository
 }

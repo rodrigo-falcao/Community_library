@@ -1,4 +1,4 @@
-# 📚 Backend para Biblioteca
+# 📚 Community Library [BACK-END] 
 
 ![status](https://img.shields.io/badge/status-em%20andamento-yellow)
 ![node](https://img.shields.io/badge/node-%3E%3D14.x-green)
