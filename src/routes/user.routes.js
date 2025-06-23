@@ -19,9 +19,8 @@ router.get(
     validateUserId,
     userControllers.findUserByIdController
 );
-router.put(
-    '/users/:id', 
-    validate(userSchema), 
+router.patch(
+    '/users/:id',
     validateUserId,
     userControllers.updateUserController
 );
