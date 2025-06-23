@@ -14,6 +14,19 @@ async function createUserService(newUser) {
     return user;
 }
 
+async function findAllUsersService() {
+    const users = await userRepositories.findAllUserRepository();
+    return users;
+}
+
+async function findUserByIdService(id) {
+    const user = await userRepositories.findUserByIdRepository(id);
+    if (!user) throw new Error("User not found");
+    return user;
+}
+
 export default {
-    createUserService
+    createUserService,
+    findAllUsersService,
+    findUserByIdService
 };
