@@ -2,6 +2,7 @@ import { Router } from 'express';
 import userControllers from '../controller/user.controlers.js';
 import { validate, validateUserId } from '../middlewares/validation.middleware.js';
 import { userSchema } from '../schema/user.schema.js';
+import { authMiddleware } from '../middlewares/auth.middleware.js';
 
 const router = Router();
 
@@ -14,6 +15,7 @@ router.post(
     '/users/login', 
     userControllers.loginUserController
 );
+router.use(authMiddleware);
 router.get(
     '/users', 
     userControllers.findAllUsersController
