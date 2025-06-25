@@ -34,5 +34,4 @@ export function authMiddleware(req, res, next) {
         return next();
     });
 
-    
 }
