@@ -10,12 +10,15 @@ router.get(
     '/books',
     bookControllers.findAllBooksController
 );
-
 router.use(authMiddleware);
 router.post(
     '/books',
     validate(BookSchema),
     bookControllers.createBookController
+);
+router.get(
+    '/books/search',
+    bookControllers.searchBooksController
 );
 router.get(
     '/books/:id',
