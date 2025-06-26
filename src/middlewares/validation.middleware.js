@@ -1,5 +1,6 @@
 import { userIdSchema } from "../schema/user.schema.js";
 import { BookIdSchema } from "../schema/book.schema.js";
+import { loanSchema } from "../schema/loan.schema.js";
 
 const validate = (schema) => ( req, res, next) => {
     try {
@@ -31,8 +32,21 @@ const validateBookId = (req, res, next) => {
     }
 }
 
+const validateLoanId = (req, res, next) => {
+    try {
+        const loanId = +req.params.id;
+        if (isNaN(loanId) || loanId <= 0) {
+            throw new Error("Invalid loan ID. It must be a positive number.");
+        }
+        next(); 
+    } catch (e) {
+        res.status(400).json({ error: e.message });
+    }
+};
+
 export { 
     validate,
     validateUserId,
-    validateBookId
+    validateBookId,
+    validateLoanId
 };
