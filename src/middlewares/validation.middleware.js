@@ -3,9 +3,11 @@ import { BookIdSchema } from "../schema/book.schema.js";
 
 const validate = (schema) => ( req, res, next) => {
     try {
+        console.log("Middleware - Request body:", req.body);
         schema.parse(req.body);
         next();
     } catch (e) {
+        console.error("Middleware - Validation error:", e.errors);
         res.status(400).json({ error: e.errors });
     }
 }
