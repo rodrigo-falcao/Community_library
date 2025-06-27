@@ -21,8 +21,8 @@ async function findAllUsersService() {
     return users;
 }
 
-async function findUserByIdService(id) {
-    const user = await userRepositories.findUserByIdRepository(id);
+async function findUserByIdService(userId) {
+    const user = await userRepositories.findUserByIdRepository(userId);
     if (!user) throw new Error("User not found");
     return user;
 }
