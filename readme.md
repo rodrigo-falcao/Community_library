@@ -1,9 +1,14 @@
 # 📚 Community Library [BACK-END] 
 
 ![status](https://img.shields.io/badge/status-finalizado-green)
-![node](https://img.shields.io/badge/node-%3E%3D14.x-green)
-![express](https://img.shields.io/badge/express-%5E4.x-blue)
-![license](https://img.shields.io/badge/license-MIT-blue)
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.2.0-646CFF?logo=vite)
+![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?logo=node.js)
+![Express](https://img.shields.io/badge/Express-4.x-000000?logo=express)
+![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite)
+![JWT](https://img.shields.io/badge/JWT-authentication-000000?logo=jsonwebtokens)
+![Postman](https://img.shields.io/badge/Postman-API%20Test-FF6C37?logo=postman)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 Este projeto é um backend para gerenciamento de retiradas de livros em uma biblioteca. Ele permite criar tabelas de usuários, tabelas de livros e controlar o uso dos livros (empréstimos e devoluções).
 
